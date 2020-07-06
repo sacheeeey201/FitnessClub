@@ -1,0 +1,218 @@
+<section>
+  <div class="main-reg">
+    <div class="form-heading">Member Registration</div>
+  
+    <div class="form-reg">
+      <form (ngSubmit)="onSubmit()" [formGroup]="memberReg" novalidate >
+
+        <div class="form-group">
+          <div class="form-label">Name :-</div>
+          <div class="form-input">
+            <input type="text"  required [(ngModel)]="member.name" name="name" id="name" formControlName="name" placeholder="Enter Full Name" required type="text" minlength="2" maxlength="25">
+            <div *ngIf="f.name.touched && f.name.invalid">
+              <span  *ngIf="!memberReg.get('name').valid && memberReg.get('name')" class="help-block">Name required</span>
+               </div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="form-label">UserName :-</div>
+          <div class="form-input">
+            <input type="text" required [(ngModel)]="member.username" name="username" id="username" formControlName="username" placeholder="Enter Username" minlength="2" maxlength="25">
+            <div *ngIf="f.username.touched && f.username.invalid">
+              <span  *ngIf="!memberReg.get('username').valid && memberReg.get('username')" class="help-block">Username required</span>
+               </div>
+          </div>
+        </div>
+ 
+        
+        <div class="form-group" [class.has-error]="f.email.invalid && f.email.touched">
+          <div class="form-label">Email :-</div>
+          <div class="form-input">
+            <input required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"  placeholder="Enter Email" id="email" type="text" class="form-control" name="email" [(ngModel)]="member.email" formControlName="email">
+              <span class="help-block" *ngIf="f.email.errors?.required && f.email.touched">Email is required </span>
+              <span class="help-block" *ngIf="f.email.errors?.pattern && f.email.touched">Email is Invalid </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">Password :-</div>
+          <div class="form-input">
+            <input type="Password" required [(ngModel)]="member.password" name="password" id="password" formControlName="password" placeholder="Enter Password" minlength="6" maxlength="18">
+            <div *ngIf="f.password.touched && f.password.invalid">
+            <span   *ngIf="!memberReg.get('password').valid && memberReg.get('password')"  class="help-block">Enter the password</span>
+              </div>
+          </div>
+        </div> 
+  
+        <div class="form-group">
+          <div class="form-label">Contact :-</div>
+          <div class="form-input">
+            <input type="text" id="contact" required [(ngModel)]="member.contact" formControlName="contact" name="contact" placeholder="Enter Contact details" > 
+          <div *ngIf="f.contact.touched && f.contact.invalid" >
+            <span *ngIf="f.contact.errors.required">Contact Number is required.</span>
+            <span *ngIf="f.contact.errors.pattern">Please Enter 10 digit Mobile Number.</span>
+          </div><br/>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="form-label">Address :-</div>
+          <div class="form-input">
+            <input type="text" required [(ngModel)]="member.addr" name="addr" id="addr" formControlName="addr" placeholder="Enter Address">
+            <div *ngIf="f.addr.touched && f.addr.invalid">
+              <span  *ngIf="!memberReg.get('addr').valid && memberReg.get('addr')" class="help-block">Address required</span>
+               </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">Date of Birth :-</div>
+          <div class="form-input">
+            <input type="date" required [(ngModel)]="member.dob" name="dob" id="dob" formControlName="dob" placeholder="Enter Date of Birth">
+            <div *ngIf="f.dob.touched && f.dob.invalid">
+              <span  *ngIf="!memberReg.get('dob').valid && memberReg.get('dob')" class="help-block">Date of Birth required</span>
+               </div>
+          </div>
+        </div>
+
+        <div class="form-group" >
+          <div class="form-label">Gender :-</div>
+          <div class="form-radio">          
+                <input type="radio" name="gender" required [(ngModel)]="member.gender" value="male" checked formControlName="gender"> Male
+                <input type="radio" name="gender" required [(ngModel)]="member.gender" value="female" formControlName="gender"> Female
+          </div>
+        </div> 
+        
+        <div class="form-group">
+          <div class="form-label">Membership Plan :-</div>
+          <div class="form-input">
+            <select id="mem_type" required [(ngModel)]="member.mem_type" name="mem_type" placeholder="Select a plan" formControlName="mem_type" >
+              <option>Bronze</option>
+              <option>Silver</option>
+              <option>Gold</option>
+              <option>Platinum</option>
+          </select>
+          </div>
+        </div>
+
+        <div class="bottom-footer">
+          <button type="reset">Reset</button>
+          <button type="submit" [disabled]='!memberReg.valid'>Submit</button>
+        </div>
+      </form>
+   
+    </div>
+  </div>
+  </section>
+
+
+  <!-- <section>
+<div class="main-reg">
+  <div class="form-heading">Member Registration</div>
+
+  <div class="form-reg">
+    <form (ngSubmit)="onSubmit()" [formGroup]="memberReg" novalidate>
+
+      <div class="form-group">
+        <div class="form-label">Name :-</div>
+        <div class="form-input">
+          <input type="text"  required [(ngModel)]="member.name" name="name" id="name" formControlName="name" placeholder="Enter Full Name" required type="text" minlength="3"  maxlength="25">
+          <div *ngIf="f.name.touched && f.name.invalid">
+            <span  *ngIf="!memberReg.get('name').valid && memberReg.get('name')" class="help-block">Name required</span>
+             </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label">UserName :-</div>
+        <div class="form-input">
+          <input type="text" required [(ngModel)]="member.username" name="username" id="username" formControlName="username" placeholder="Enter Username" required type="text" minlength="3"  maxlength="25">
+          <div *ngIf="f.username.touched && f.username.invalid">
+            <span  *ngIf="!memberReg.get('username').valid && memberReg.get('username')" class="help-block">Username required</span>
+             </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label">Password :-</div>
+        <div class="form-input">
+          <input type="password"  required [(ngModel)]="member.password" name="password" id="password" formControlName="password" placeholder="Enter password" required minlength="6"  maxlength="18">
+          <div *ngIf="f.password.touched && f.password.invalid">
+            <span  *ngIf="!memberReg.get('password').valid && memberReg.get('password')" class="help-block">password required</span>
+             </div>
+        </div>
+      </div>
+
+
+      <div class="form-group" [class.has-error]="f.email.invalid && f.email.touched">
+        <div class="form-label">Email :-</div>
+        <div class="form-input">
+          <input required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"  placeholder="Enter Email" id="email" type="text" class="form-control" name="email" [(ngModel)]="member.email" formControlName="email">
+            <span class="help-block" *ngIf="f.email.errors?.required && f.email.touched">Email is required </span>
+            <span class="help-block" *ngIf="f.email.errors?.pattern && f.email.touched">Email is Invalid </span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label">Contact :-</div>
+        <div class="form-input">
+          <input type="number" id="contact" required [(ngModel)]="member.contact" name="contact" formControlName="contact" placeholder="Enter Contact details" minlenght="10" maxlength="10"> 
+          <div *ngIf="f.contact.touched && f.contact.invalid" >
+            <span *ngIf="f.contact.errors.required">Mobile Number is required.</span>
+            <span *ngIf="f.contact.errors.pattern">Please Enter 10 digit Mobile Number.</span>
+          </div><br/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label">Address :-</div>
+        <div class="form-input">
+          <textarea  class="form-control" id="addr" required [(ngModel)]="member.addr" name="addr" formControlName="addr" placeholder="Enter Residential Address"></textarea>
+          <div *ngIf="f.addr.touched && f.addr.invalid">
+            <span   *ngIf="!memberReg.get('addr').valid && memberReg.get('addr')"  class="help-block">Enter proper address</span>
+              </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label">Gender :-</div>
+        <div class="form-radio">          
+              <input type="radio" name="gender" required [(ngModel)]="member.gender" value="male" checked formControlName="gender"> Male
+              <input type="radio" name="gender" required [(ngModel)]="member.gender" value="female" > Female
+        
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label">Membership Plan :-</div>
+        <div class="form-input">
+          <select id="mem_type" required [(ngModel)]="member.mem_type" name="mem_type" formControlName="mem_type" >
+            <option>Bronze</option>
+            <option>Silver</option>
+            <option>Gold</option>
+            <option>Platinum</option>
+        </select>
+        </div>
+      </div>
+
+     <div class="form-group">
+      <div class="form-label">Date of Birth :-</div>
+      <div class="form-input">
+        <input type="date" required [(ngModel)]="member.dob" name="dob" id="dob" formControlName="dob" placeholder="Enter Date of Birth">
+        <div *ngIf="f.dob.touched && f.dob.invalid">
+          <span  *ngIf="!memberReg.get('dob').valid && memberReg.get('dob')" class="help-block">Date of Birth required</span>
+           </div>
+      </div>
+    </div>
+
+      <div class="bottom-footer">
+        <button type="reset">Reset</button>
+        <button  [disabled]='!memberReg.valid' type="submit" >Submit</button>
+      </div>
+    </form>
+    
+
+  </div>
+</div>
+</section> -->

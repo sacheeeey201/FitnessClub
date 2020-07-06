@@ -1,0 +1,73 @@
+<section id="product">
+  <div class="main-reg">
+    <div class="form-heading">Add Product</div>
+  
+    <div class="form-reg">
+      <form (ngSubmit)="onSubmit()" [formGroup]="productReg" novalidate>
+        <div class="form-group">
+          <div class="form-label">Product Name :-</div>
+          <div class="form-input">
+            <input type="text"  required [(ngModel)]="product.productname" formControlName="productname" name="productname" id="productname" placeholder="Enter Product Name">
+            <div *ngIf="f.productname.touched && f.productname.invalid">
+              <span  *ngIf="!productReg.get('productname').valid && productReg.get('productname')" class="help-block">Product name required</span>
+               </div>
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <div class="form-label">Quantity :-</div>
+          <div class="form-input">
+            <input type="text"  required [(ngModel)]="product.quantity" formControlName="quantity" name="quantity" id="quantity" placeholder="Enter Quantity">
+            <div *ngIf="f.quantity.touched && f.quantity.invalid">
+              <span  *ngIf="!productReg.get('quantity').valid && productReg.get('quantity')" class="help-block">Quantity required</span>
+               </div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="form-label">MFG Date :-</div>
+          <div class="form-input">
+            <input type="date" required [(ngModel)]="product.m_date" name="m_date" id="m_date"  formControlName="m_date" placeholder="Enter Manufacturing Date">
+          </div>
+        </div> 
+  
+        <div class="form-group">
+          <div class="form-label">Expiry Date :-</div>
+          <div class="form-input">
+            <input type="date" required [(ngModel)]="product.e_date" name="e_date" id="e_date" formControlName="e_date" placeholder="Enter Expiry Date">
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="form-label">Price :-</div>
+          <div class="form-input">
+            <input type="text" required [(ngModel)]="product.price" formControlName="price" name="price" id="price" placeholder="Enter Price">
+            <div *ngIf="f.price.touched && f.price.invalid">
+              <span  *ngIf="!productReg.get('price').valid && productReg.get('price')" class="help-block">Price required</span>
+               </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">Description :-</div>
+          <div class="form-input">
+            <input type="text" required [(ngModel)]="product.description" formControlName="description" name="description" id="description" placeholder="Enter description">
+            <div *ngIf="f.description.touched && f.description.invalid">
+              <span  *ngIf="!productReg.get('description').valid && productReg.get('description')" class="help-block">Description required</span>
+               </div>
+          </div>
+        </div>
+
+
+        <div class="bottom-footer">     
+          <button type="reset">Reset</button>
+          <button type="submit" [disabled]='!productReg.valid'>Submit</button>
+         
+          <button (click)="back()" style="padding-left: 10px;" class="btn btn-info" >Back</button>
+        </div>
+      </form>
+    
+  
+    </div>
+  </div>
+  </section>

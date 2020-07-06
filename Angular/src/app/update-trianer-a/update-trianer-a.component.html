@@ -1,0 +1,35 @@
+<section id="trainer">
+    <div class="main-reg">
+      <div class="form-heading">Update Trainer</div>
+    
+      <div class="form-reg">
+        <form (ngSubmit)="onSubmit()">
+  
+          <div class="form-group">
+            <div class="form-label">Trainer id :-</div>
+            <div class="form-input">
+              <input type="text"  required [(ngModel)]="trainer.t_id" name="t_id" id="t_id" readonly>
+            </div>
+          </div>
+      
+  
+        
+          <div class="form-group">
+            <div class="form-label">Password :-</div>
+            <div class="form-input">
+              <input type="text"  required [(ngModel)]="trainer.password" name="password" id="password" >
+            </div>
+          </div>
+    
+        
+  
+          <div class="bottom-footer">
+          
+            <button type="submit">Submit</button>
+            <button (click)="back()"class="btn btn-info">Back</button>
+          </div>
+        </form>
+        
+      </div>
+    </div>
+    </section>

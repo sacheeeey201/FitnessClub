@@ -1,0 +1,29 @@
+<div class="panel panel-primary" id="mlist">
+  <div class="panel-heading">
+    <h2>Member List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table " style="border:none"  id="table">
+      <thead>
+        <tr>
+          <th>mid</th>
+          <th>username</th>
+          <th>name</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let member of members | async">
+          <td>{{member.mid}}</td>
+          <td>{{member.username}}</td>
+          <td>{{member.name}}</td>
+          <td><button (click)="deleteMember(member.mid)" class="btn btn-danger">Delete</button></td>
+          <td><button (click)="updateMember(member.mid)" class="btn btn-info">Update</button></td>
+          <td><button (click)="memberDetails(member.mid)" class="btn btn-info" style="margin-left: 10px">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button (click)="back()"class="btn btn-info">Back</button>
+   </div>
+</div>

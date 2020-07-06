@@ -1,0 +1,67 @@
+<section id="product">
+  <div class="main-reg">
+    <div class="form-heading">Update Product</div>
+  
+    <div class="form-reg">
+      <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <div class="form-label">Product ID :-</div>
+          <div class="form-input">
+            <input type="text"  required [(ngModel)]="product.pid" name="pid" id="pid" readonly>
+          </div>
+        </div>
+    
+
+        <div class="form-group">
+          <div class="form-label">Product Name :-</div>
+          <div class="form-input">
+            <input type="text"  required [(ngModel)]="product.productname" name="productname" id="productname">
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <div class="form-label">Quantity :-</div>
+          <div class="form-input">
+            <input type="text"  required [(ngModel)]="product.quantity" name="quantity" id="quantity" >
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="form-label">MFG Date :-</div>
+          <div class="form-input">
+            <input type="date" required [(ngModel)]="product.m_date" name="m_date" id="m_date" >
+          </div>
+        </div> 
+  
+        <div class="form-group">
+          <div class="form-label">Expiry Date :-</div>
+          <div class="form-input">
+            <input type="date" required [(ngModel)]="product.e_date" name="e_date" id="e_date" >
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="form-label">Price :-</div>
+          <div class="form-input">
+            <input type="text" required [(ngModel)]="product.price" name="price" id="price" >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">Description :-</div>
+          <div class="form-input">
+            <input type="text" required [(ngModel)]="product.description" name="description" id="description" >
+          </div>
+        </div>
+
+
+        <div class="bottom-footer">
+        
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+      
+    </div>
+  </div>
+  </section>

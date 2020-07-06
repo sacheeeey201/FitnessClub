@@ -1,0 +1,33 @@
+
+
+
+<div *ngIf="product" id="txt">
+  <br/>  <br/>
+  <h2>Product Details</h2> <hr/>
+  <div>
+    <label><b>Product ID: </b></label> {{product.pid}}
+  </div>
+  <div>
+    <label><b>Product Name: </b></label> {{product.productname}}
+  </div>
+  <div>
+    <label><b>Quantity: </b></label> {{product.quantity}}
+  </div>  
+  <div>
+    <label><b>Manufacturing Date: </b></label> {{product.m_date}}
+  </div>
+  <div>
+    <label><b>Expiry Expiry: </b></label> {{product.e_date}}
+  </div>
+  <div>
+    <label><b>Price: </b></label> {{product.price}}
+  </div>
+  <div>
+    <label><b>Description: </b></label> {{product.description}}
+  </div>
+  <br/>
+  <br/>
+  <button (click)="list()" class="btn btn-primary">Back to Product List</button><br/>
+</div>
+
+<br/><br/><br/><br/>

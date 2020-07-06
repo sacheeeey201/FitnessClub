@@ -1,0 +1,85 @@
+<!--<h3>Update Result</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="name">Height</label>
+      <input type="text" class="form-control" id="height" step="0.01" min="0" max="274" required [(ngModel)]="health.height" name="height">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Weight</label>
+      <input type="text" class="form-control" id="weight" step="0.01" min="0" max="635" required [(ngModel)]="health.weight" name="weight">
+    </div>
+
+    <div class="form-group">
+      <label for="name">BMI</label>
+      <input type="text" class="form-control" id="bmi" required [(ngModel)]="health.bmi" name="bmi">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Health Problem</label>
+      <input type="text" class="form-control" id="healthProblem" required [(ngModel)]="health.healthProblem" name="healthProblem">
+    </div>
+    
+    <div class="form-group">
+      <label for="name">Date</label>
+      <input type="text" class="form-control" id="date" required [(ngModel)]="health.date" name="date">
+    </div>
+    <button type="submit" class="btn btn-success">Update</button>
+  </form>
+</div>
+
+-->
+<section id="product">
+  <div class="main-reg">
+    <div class="form-heading">Update Result</div>
+  
+    <div class="form-reg">
+      <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <div class="form-label">Height :-</div>
+          <div class="form-input">
+            <input type="text"  required [(ngModel)]="health.height" name="height" id="height">
+          </div>
+        </div>
+    
+
+        <div class="form-group">
+          <div class="form-label">Weight :-</div>
+          <div class="form-input">
+            <input type="text"  required [(ngModel)]="health.weight" name="weight" id="weight">
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <div class="form-label">BMI :-</div>
+          <div class="form-input">
+            <input type="text"  required [(ngModel)]="health.bmi" name="bmi" id="bmi" >
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="form-label">Health Problem :-</div>
+          <div class="form-input">
+            <input type="text" required [(ngModel)]="health.healthProblem" name="healthProblem" id="healthProblem" >
+          </div>
+        </div> 
+  
+        <div class="form-group">
+          <div class="form-label">Date :-</div>
+          <div class="form-input">
+            <input type="date" required [(ngModel)]="health.date" name="date" id="date" >
+          </div>
+        </div>
+  
+          <div class="bottom-footer">
+        
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+      
+    </div>
+  </div>
+  </section>

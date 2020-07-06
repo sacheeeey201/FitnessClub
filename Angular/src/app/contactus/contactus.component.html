@@ -1,0 +1,58 @@
+
+<div class="row" id="contatti">
+<div class="container mt-5" >
+
+    <div class="row" style="height:550px;">
+      <div class="col-md-6 maps" >
+        <!-- <iframe src="https://www.google.com/maps/place/Fitness+Mantras/@18.5978394,73.8925275,15z/data=!4m8!1m2!2m1!1sfitness+mantra+dhanori!3m4!1s0x0:0xcfdc2dced342db7b!8m2!3d18.5978394!4d73.9012823" frameborder="0" style="border:0" allowfullscreen></iframe>
+      -->
+      <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=muktifit%20kharadi&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+      <div class="col-md-6">
+        <h2 class="text-uppercase mt-3 font-weight-bold text-white">CONTACT US</h2>
+        <form (ngSubmit)="onSubmit()"  name="cos">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input type="text" class="form-control mt-2" placeholder="Name"  required [(ngModel)]="contactUs.name" name="name">
+              </div>
+            </div>
+          
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input type="email" class="form-control mt-2" placeholder="Email" required [(ngModel)]="contactUs.email" name="email">
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input type="number" class="form-control mt-2" placeholder="Contact No" required [(ngModel)]="contactUs.contact" name="contact">
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Your Query" rows="3" required [(ngModel)]="contactUs.message" name="message"></textarea>
+              </div>
+            </div>
+            <div class="col-12">
+          
+            </div>
+            <div class="col-12">
+              <button class="btn btn-light" type="submit">Submit</button>
+            </div>
+           </div>
+        </form> 
+        <div class="text-white">
+        <h2 class="text-uppercase mt-4 font-weight-bold">call us</h2>
+        <br>
+       <b>Call Us :   </b> <a href="tel:+">(+91) 888888</a><br>
+       <b>Call Us :   </b> <a href="tel:+">(+91) 123456</a><br><br>
+       <b>Mail    :   </b> <a href="http://www.gmail.com">FitnessClub@mail.com</a><br><br>
+       <b>Address :   </b> FITNESS Club, 1, 411001 Pune<br>
+       <b>Address :   </b> FITNESS Club, 2, 411001 Pune<br>
+      
+        </div>
+      </div>
+
+    </div>
+</div>
+</div>

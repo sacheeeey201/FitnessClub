@@ -1,0 +1,40 @@
+
+
+<hr/>
+<div *ngIf="member" id="txt">
+  <h2>Member Details</h2> 
+  <div >
+    <label><b>Name: </b></label> {{member.name}}
+  </div>
+  <div>
+    <label><b>Username: </b></label> {{member.username}}
+  </div>
+  <div>
+    <label><b>Password: </b></label> {{member.password}}
+  </div>  
+  <div>
+    <label><b>Email: </b></label> {{member.email}}
+  </div>
+  <div>
+    <label><b>Contact: </b></label> {{member.contact}}
+  </div>
+  <div>
+    <label><b>Address: </b></label> {{member.addr}}
+  </div>  
+  <div>
+    <label><b>Gender: </b></label> {{member.gender}}
+  </div>
+  <div>
+    <label><b>Member Type: </b></label> {{member.mem_type}}
+  </div>
+  <div>
+    <label><b>Date of Birth: </b></label> {{member.dob}}
+  </div>  
+  <br/>
+  <br/>
+
+  <button (click)="list()"class="btn btn-primary">Back to Member List</button><br>
+</div>
+
+<br/>
+<br/>

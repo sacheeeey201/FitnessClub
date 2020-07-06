@@ -1,0 +1,30 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Results</h2>
+    </div>
+    <div class="panel-body" style="align-content: center;">
+      <table class="table table-striped" style="border:double; align-self: center;"  >
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>BMI</th>
+            <th>Health Problems</th>  
+          </tr>
+        </thead>  
+        <tbody>
+          <tr *ngFor="let r of health | async">
+            <td>{{r.date}}</td>
+            <td>{{r.height}}</td>
+            <td>{{r.weight}}</td>    
+            <td>{{r.bmi}}</td>
+            <td>{{r.healthProblem}}</td>    
+            <td><button (click)="save(p.pid,product.quantity)" class="btn btn-info">Add to cart</button></td> 
+          <!--  <td><button (click)="save(p.pid)" class="btn btn-info">Submit</button></td> -->
+          </tr>
+        </tbody>
+      </table>
+      <button (click)="back()" class="btn btn-info">Back</button>
+    </div>
+  </div>

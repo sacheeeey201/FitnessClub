@@ -1,0 +1,74 @@
+
+ <section id="member">
+  <div class="main-reg">
+    <div class="form-heading">Update Member</div>
+  
+    <div class="form-reg">
+      <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <div class="form-label">Member Name :-</div>
+          <div class="form-input">
+            <input type="text"  required [(ngModel)]="member.name" name="name" id="name" readonly>
+          </div>
+        </div>
+    
+
+        <div class="form-group">
+          <div class="form-label">User Name :-</div>
+          <div class="form-input">
+            <input type="text"  required [(ngModel)]="member.username" name="username" id="username">
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <div class="form-label">Password :-</div>
+          <div class="form-input">
+            <input type="text"  required [(ngModel)]="member.password" name="password" id="password" >
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="form-label">Date of Birth:-</div>
+          <div class="form-input">
+            <input type="date" required [(ngModel)]="member.dob" name="dob" id="dob" >
+          </div>
+        </div> 
+  
+        <div class="form-group">
+          <div class="form-label">Email :-</div>
+          <div class="form-input">
+            <input type="email" required [(ngModel)]="member.email" name="email" id="email" >
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="form-label">Gender :-</div>
+          <div class="form-radio">          
+                <input type="radio" name="gender" required [(ngModel)]="member.gender" value="male" checked> Male
+                <input type="radio" name="gender" required [(ngModel)]="member.gender" value="female" > Female
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">Contact :-</div>
+          <div class="form-input">
+            <input type="number" required [(ngModel)]="member.contact" name="contact" id="contact" >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">Address :-</div>
+          <div class="form-input">
+            <input type="text" required [(ngModel)]="member.addr" name="addr" id="addr" >
+          </div>
+        </div>
+
+        <div class="bottom-footer">
+              <button type="submit">Submit</button>
+              <button (click)="back()" class="btn btn-primary">Back </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  </section>

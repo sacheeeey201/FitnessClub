@@ -1,0 +1,48 @@
+
+ <section id="member">
+    <div class="main-reg">
+      <div class="form-heading">Update Member</div>
+    
+      <div class="form-reg">
+        <form (ngSubmit)="onSubmit()">
+  
+     
+      
+  
+          <div class="form-group">
+            <div class="form-label">User ID :-</div>
+            <div class="form-input">
+              <input type="text"  required [(ngModel)]="member.mid" name="mid" id="mid" readonly>
+            </div>
+          </div>
+      
+          <div class="form-group">
+            <div class="form-label">Password :-</div>
+            <div class="form-input">
+              <input type="text"  required [(ngModel)]="member.password" name="password" id="password" >
+            </div>
+          </div>
+    
+       
+  
+        
+          <div class="form-group">
+            <div class="form-label">Membership Plan :-</div>
+            <div class="form-input">
+              <select id="mem_type" required [(ngModel)]="member.mem_type" name="mem_type" >
+                <option>Bronze</option>
+                <option>Silver</option>
+                <option>Gold</option>
+                <option>Platinum</option>
+            </select>
+            </div>
+          </div>
+          <div class="bottom-footer">
+            <button type="submit">Submit</button>
+            <button (click)="back()"class="btn btn-info">Back</button>
+          </div>
+        </form>
+        
+      </div>
+    </div>
+    </section>

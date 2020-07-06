@@ -1,0 +1,43 @@
+
+
+<hr/>
+<div *ngIf="trainer" id="txt">
+  <br/><br/>
+  <h2>Trainer Details</h2>  <br/><br/>
+  <div>
+    <label><b>Name: </b></label> {{trainer.name}}
+  </div>
+  <div>
+    <label><b>Username: </b></label> {{trainer.username}}
+  </div>
+  <div>
+    <label><b>Password: </b></label> {{trainer.password}}
+  </div>
+  <div>
+    <label><b>Email Id: </b></label> {{trainer.email}}
+  </div>  
+  <div>
+    <label><b>Contact: </b></label> {{trainer.contact}}
+  </div>
+  <div>
+    <label><b>Gender: </b></label> {{trainer.gender}}
+  </div>
+  <div>
+    <label><b>Date of Birth: </b></label> {{trainer.dob}}
+  </div>
+  <div>
+    <label><b>Address: </b></label> {{trainer.addr}}
+  </div>  
+  <div>
+    <label><b>Experience: </b></label> {{trainer.experience}}
+  </div>
+  <div>  
+    <label><b>Specialization: </b></label> {{trainer.speciality}}
+  </div>
+  <br/><br/>
+
+  <button (click)="list()" class="btn btn-primary">Back to Trainer List</button><br>
+
+</div>
+
+<br/><br/> <br/><br/>

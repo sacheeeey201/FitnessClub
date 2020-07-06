@@ -1,0 +1,28 @@
+<div class="panel panel-primary" id="tlist">
+  <div class="panel-heading">
+    <h2>Trainer List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table " style="border: double;" id="table">
+      <thead>
+        <tr>
+          <th>t_id</th>
+          <th>username</th>
+          <th>name</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let trainer of trainers | async">
+         <td>{{trainer.t_id}}</td>
+          <td>{{trainer.username}}</td>
+          <td>{{trainer.name}}</td>
+          <td><button (click)="deleteTrainer(trainer.t_id)" class="btn btn-danger">Delete</button></td>
+          <td><button (click)="trainerDetails(trainer.t_id)" class="btn btn-info" style="margin-left: 10px">Details</button></td>
+          <td><button (click)="updateTrainer(trainer.t_id)" class="btn btn-danger">Update</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <button (click)="back()"class="btn btn-info">Back</button>
+  </div>
+</div>

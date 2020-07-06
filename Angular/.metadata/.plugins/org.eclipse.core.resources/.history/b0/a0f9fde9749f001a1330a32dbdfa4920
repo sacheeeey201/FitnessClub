@@ -1,0 +1,20 @@
+package string;
+
+public class WhiteSpaceRemove {
+
+	public static void main(String[] args)
+	{
+		String s="   Tony    Stark  ";
+		String w="";
+		for(int i=s.length();i>=0;++i)
+		{
+			if((s.charAt(i)!=' ') && (s.charAt(i)!='\t')) 
+			{
+				w += s.charAt(i);
+			}
+			
+		}
+		System.out.println("w is : "+w);
+	}
+
+}

@@ -1,0 +1,75 @@
+
+<section id="health">
+  <div class="main-reg">
+    <div class="form-heading">Add Result</div>
+  
+    <div class="form-reg">
+      <form (ngSubmit)="onSubmit()" [formGroup]="healthReg" novalidate>
+        <div class="form-group">
+          <div class="form-label">Member id :-</div>
+          <div class="form-input">
+            <input type="number"  required [(ngModel)]="health.mid" formControlName="mid" name="mid" id="mid" placeholder="Enter Member ID">
+            <div *ngIf="f.mid.touched && f.mid.invalid">
+              <span  *ngIf="!healthReg.get('mid').valid && healthReg.get('mid')" class="help-block">Member required</span>
+               </div>
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <div class="form-label">Height :-</div>
+          <div class="form-input">
+            <input type="number"  required [(ngModel)]="health.height" formControlName="height" name="height" id="height" placeholder="Enter Height">
+            <div *ngIf="f.height.touched && f.height.invalid">
+              <span  *ngIf="!healthReg.get('height').valid && healthReg.get('height')" class="help-block">Height required</span>
+               </div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="form-label">Weight :-</div>
+          <div class="form-input">
+            <input type="number" required [(ngModel)]="health.weight" formControlName="weight" name="weight" id="weight" placeholder="Enter Weight">
+            <div *ngIf="f.weight.touched && f.weight.invalid">
+              <span  *ngIf="!healthReg.get('weight').valid && healthReg.get('weight')" class="help-block">Weight required</span>
+               </div>
+          </div>
+        </div> 
+  
+        <div class="form-group">
+          <div class="form-label">Date :-</div>
+          <div class="form-input">
+            <input type="date" required [(ngModel)]="health.date" name="date" id="date" placeholder="Enter Date" formControlName="date">
+          </div>
+        </div>
+  
+       
+        <div class="form-group">
+          <div class="form-label">Health Problems :-</div>
+          <div class="form-radio">
+              <input type="radio" name="healthProblem" required [(ngModel)]="health.healthProblem" value="no" checked formControlName="healthProblem"> No
+              <input type="radio" name="healthProblem" required [(ngModel)]="health.healthProblem" value="Yes" formControlName="healthProblem"> Yes
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">BMI :-</div>
+          <div class="form-input">
+            <input type="number" required [(ngModel)]="health.bmi" formControlName="bmi" name="bmi" id="bmi" placeholder="Enter BMI">
+            <div *ngIf="f.bmi.touched && f.bmi.invalid">
+              <span  *ngIf="!healthReg.get('bmi').valid && healthReg.get('bmi')" class="help-block">BMI required</span>
+               </div>
+          </div>
+        </div>
+
+
+        <div class="bottom-footer">
+          <button type="reset">Reset</button>
+          <button type="submit" [disabled]='!healthReg.valid'>Submit</button>
+          <button (click)="back()" class="btn btn-info">Back</button>
+        </div>
+      </form>
+      
+  
+    </div>
+  </div>
+  </section>

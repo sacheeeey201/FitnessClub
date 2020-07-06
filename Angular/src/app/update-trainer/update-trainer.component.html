@@ -1,0 +1,88 @@
+<section id="trainer">
+  <div class="main-reg">
+    <div class="form-heading">Update Trainer</div>
+  
+    <div class="form-reg">
+      <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <div class="form-label">Trainer id :-</div>
+          <div class="form-input">
+            <input type="text"  required [(ngModel)]="trainer.name" name="name" id="name" readonly>
+          </div>
+        </div>
+    
+
+        <div class="form-group">
+          <div class="form-label">User Name :-</div>
+          <div class="form-input">
+            <input type="text"  required [(ngModel)]="trainer.username" name="username" id="username">
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <div class="form-label">Password :-</div>
+          <div class="form-input">
+            <input type="text"  required [(ngModel)]="trainer.password" name="password" id="password" >
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="form-label">Date of Birth:-</div>
+          <div class="form-input">
+            <input type="date" required [(ngModel)]="trainer.dob" name="dob" id="dob" >
+          </div>
+        </div> 
+  
+        <div class="form-group">
+          <div class="form-label">Email :-</div>
+          <div class="form-input">
+            <input type="email" required [(ngModel)]="trainer.email" name="email" id="email" >
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="form-label">Gender :-</div>
+          <div class="form-radio">          
+                <input type="radio" name="gender" required [(ngModel)]="trainer.gender" value="male" checked> Male
+                <input type="radio" name="gender" required [(ngModel)]="trainer.gender" value="female" > Female
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">Contact :-</div>
+          <div class="form-input">
+            <input type="number" required [(ngModel)]="trainer.contact" name="contact" id="contact" >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">Address :-</div>
+          <div class="form-input">
+            <input type="text" required [(ngModel)]="trainer.addr" name="addr" id="addr" >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">Experiece :-</div>
+          <div class="form-input">
+            <input type="number" required [(ngModel)]="trainer.experience" name="experience" id="experience" >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">Speciality :-</div>
+          <div class="form-input">
+            <input type="text" required [(ngModel)]="trainer.speciality" name="speciality" id="speciality" >
+          </div>
+        </div>
+
+        <div class="bottom-footer">
+           <button type="submit">Submit</button>
+           <button (click)="back()"class="btn btn-info">Back</button>
+        </div>
+      </form>
+      
+    </div>
+  </div>
+  </section>

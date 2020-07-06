@@ -1,0 +1,34 @@
+<div class="panel panel-primary" id="hlist">
+    <div class="panel-heading">
+      <h2>Results List</h2>
+    </div>
+    <div class="panel-body" style="align-content: center;">
+      <table class="table " style="border:double; align-self: center;" id="table" >
+        <thead>
+          <tr>
+            <th>Member Id</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Date</th>
+            <th>BMI</th>
+            <th>Health Problems</th>  
+            <th colspan="3"></th>
+          </tr>
+        </thead>  
+        <tbody>
+          <tr *ngFor="let h of health | async">
+            <td>{{h.mid}}</td>
+            <td>{{h.height}}</td>    
+            <td>{{h.weight}}</td>
+            <td>{{h.date}}</td>
+            <td>{{h.bmi}}</td>
+            <td>{{h.healthProblem}}</td>  
+            <td><button (click)="update(h.rid)" class="btn btn-info">Update</button></td>            
+          <!--  <td><button (click)="save(p.pid)" class="btn btn-info">Submit</button></td> -->
+          </tr>
+        </tbody>
+      </table>
+      <td><button (click)="back()" class="btn btn-info">Back</button></td> 
+    </div>
+  </div>
+ 

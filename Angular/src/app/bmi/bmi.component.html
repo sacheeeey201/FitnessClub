@@ -1,0 +1,83 @@
+
+
+<section class="bmi-calculator-section spad">
+       <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-title chart-title">
+                 <br/>
+                    <h2>BMI CALCULATOR CHART</h2>
+                </div>
+                <div class="chart-table">
+                    <table style="height: 250px;width: 500px;">
+                        <thead>
+                            <tr>
+                                <th>Bmi</th>
+                                <th>WEIGHT STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="point">Below 18.5</td>
+                                <td>Underweight</td>
+                            </tr>
+                            <tr>
+                                <td class="point">18.5 - 24.9</td>
+                                <td>Healthy</td>
+                            </tr>
+                            <tr>
+                                <td class="point">25.0 - 29.9</td>
+                                <td>Overweight</td>
+                            </tr>
+                            <tr>
+                                <td class="point">30.0 - and Above</td>
+                                <td>Obese</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="section-title chart-calculate-title">
+                    <br/>
+                    <h2>CALCULATE YOUR BMI</h2>
+                </div>
+                <div class="chart-calculate-form">
+                    <p>Body mass index (BMI) is a value derived from the mass (weight) and
+                         height of a person. The BMI is defined as the body mass divided by
+                          the square of the body height, and is universally expressed in units 
+                          of kg/m2, resulting from mass in kilograms and height in metres.</p>
+                    <form name="bmiForm" [formGroup]="bmi">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <input type="text" step="0.01" min="0" max="251" id="hgt" placeholder=" height in cm"   formControlName="hgt">
+                                <div *ngIf="f.username.touched && f.username.invalid">
+                                    <span  *ngIf="!bmi.get('hgt').valid && bmi.get('hgt')" class="help-block">Age required</span>
+                                  </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" step="0.01" min="0" max="650" id="wgt" placeholder=" weight in kg"  formControlName="wgt">
+                                <div *ngIf="f.username.touched && f.username.invalid">
+                                    <span  *ngIf="!bmi.get('wgt').valid && bmi.get('wgt')" class="help-block">Weight required</span>
+                                  </div>
+                            </div> 
+                            <div class="col-sm-6">
+                                <input type="number" min="0" placeholder=" Age"  formControlName="age">
+                                <div *ngIf="f.username.touched && f.username.invalid">
+                                    <span  *ngIf="!bmi.get('age').valid && bmi.get('age')" class="help-block">Age required</span>
+                                  </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text"  placeholder=" Gender"  formControlName="gender">
+                                <div *ngIf="f.username.touched && f.username.invalid">
+                                    <span  *ngIf="!bmi.get('gender').valid && bmi.get('gender')" class="help-block">Gender required</span>
+                                  </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <button type="submit" onClick="calBmi()">Calculate</button>
+                            </div>
+                        </div>
+                    </form>
+                    <br/> <p class="col-lg-12" id="result"></p> 
+                </div>

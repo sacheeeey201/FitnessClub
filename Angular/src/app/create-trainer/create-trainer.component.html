@@ -1,0 +1,115 @@
+<section>
+  <div class="main-reg">
+    <div class="form-heading">Trainer Registration</div>
+  
+    <div class="form-reg">
+      <form (ngSubmit)="onSubmit()" [formGroup]="trainerReg" novalidate >
+        <div class="form-group">
+          <div class="form-label">Name :-</div>
+          <div class="form-input">
+            <input type="text"  required [(ngModel)]="trainer.name" name="name" id="name" formControlName="name" placeholder="Enter Full Name" required type="text" minlength="2" maxlength="25">
+            <div *ngIf="f.name.touched && f.name.invalid">
+              <span  *ngIf="!trainerReg.get('name').valid && trainerReg.get('name')" class="help-block">Name required</span>
+               </div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="form-label">UserName :-</div>
+          <div class="form-input">
+            <input type="text" required [(ngModel)]="trainer.username" name="username" id="username" formControlName="username" placeholder="Enter Username" minlength="2" maxlength="25">
+            <div *ngIf="f.username.touched && f.username.invalid">
+              <span  *ngIf="!trainerReg.get('username').valid && trainerReg.get('username')" class="help-block">Username required</span>
+               </div>
+          </div>
+        </div>
+ 
+        
+        <div class="form-group" [class.has-error]="f.email.invalid && f.email.touched">
+          <div class="form-label">Email :-</div>
+          <div class="form-input">
+            <input required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"  placeholder="Enter Email" id="email" type="text" class="form-control" name="email" [(ngModel)]="trainer.email" formControlName="email">
+              <span class="help-block" *ngIf="f.email.errors?.required && f.email.touched">Email is required </span>
+              <span class="help-block" *ngIf="f.email.errors?.pattern && f.email.touched">Email is Invalid </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">Password :-</div>
+          <div class="form-input">
+            <input type="Password" required [(ngModel)]="trainer.password" name="password" id="password" formControlName="password" placeholder="Enter Password" minlength="6" maxlength="18">
+            <div *ngIf="f.password.touched && f.password.invalid">
+            <span   *ngIf="!trainerReg.get('password').valid && trainerReg.get('password')"  class="help-block">Enter the password</span>
+              </div>
+          </div>
+        </div> 
+  
+        <div class="form-group">
+          <div class="form-label">Contact :-</div>
+          <div class="form-input">
+            <input type="text" id="contact" required [(ngModel)]="trainer.contact" formControlName="contact" name="contact" placeholder="Enter Contact details" > 
+          <div *ngIf="f.contact.touched && f.contact.invalid" >
+            <span *ngIf="f.contact.errors.required">Contact Number is required.</span>
+            <span *ngIf="f.contact.errors.pattern">Please Enter 10 digit Mobile Number.</span>
+          </div><br/>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="form-label">Address :-</div>
+          <div class="form-input">
+            <input type="text" required [(ngModel)]="trainer.addr" name="addr" id="addr" formControlName="addr" placeholder="Enter Address">
+            <div *ngIf="f.addr.touched && f.addr.invalid">
+              <span  *ngIf="!trainerReg.get('addr').valid && trainerReg.get('addr')" class="help-block">Address required</span>
+               </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">Date of Birth :-</div>
+          <div class="form-input">
+            <input type="date" required [(ngModel)]="trainer.dob" name="dob" id="dob" formControlName="dob" placeholder="Enter Date of Birth">
+            <div *ngIf="f.dob.touched && f.dob.invalid">
+              <span  *ngIf="!trainerReg.get('dob').valid && trainerReg.get('dob')" class="help-block">Date of Birth required</span>
+               </div>
+          </div>
+        </div>
+
+        <div class="form-group" >
+          <div class="form-label">Gender :-</div>
+          <div class="form-radio">          
+                <input type="radio" name="gender" required [(ngModel)]="trainer.gender" value="male" checked formControlName="gender"> Male
+                <input type="radio" name="gender" required [(ngModel)]="trainer.gender" value="female" formControlName="gender"> Female
+          </div>
+        </div> 
+        
+        <div class="form-group">
+          <div class="form-label">Experience :-</div>
+          <div class="form-input">
+            <input type="text" required [(ngModel)]="trainer.experience" name="experience" id="experience" formControlName="experience" placeholder="Enter Experience (in years)">
+            <div *ngIf="f.experience.touched && f.experience.invalid">
+              <span  *ngIf="!trainerReg.get('experience').valid && trainerReg.get('experience')" class="help-block">Experience required</span>
+               </div>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <div class="form-label">Speciality :-</div>
+          <div class="form-input">
+            <input type="text" required [(ngModel)]="trainer.speciality" name="speciality" id="speciality" formControlName="speciality" placeholder="Enter Speciality">
+            <div *ngIf="f.speciality.touched && f.speciality.invalid">
+              <span  *ngIf="!trainerReg.get('speciality').valid && trainerReg.get('speciality')" class="help-block">Speciality required</span>
+               </div>
+          </div>
+        </div>
+
+        <div class="bottom-footer">
+          <button type="reset">Reset</button>
+          <button type="submit" [disabled]='!trainerReg.valid'>Submit</button>
+        </div>
+      </form>
+   
+    </div>
+  </div>
+  </section>
